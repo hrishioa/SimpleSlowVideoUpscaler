@@ -14,11 +14,11 @@
 
 <div align="center">
 
-![output2](https://github.com/hrishioa/wishful-search/assets/973967/34e2fa82-2ae2-442a-972d-a2ab97d51d5e)
+https://github.com/user-attachments/assets/e80f6d43-119e-4bf2-a886-79eac885e624
 
 </div>
 
-Was super impressed with the output from [tile upscaler](https://huggingface.co/spaces/gokaygokay/Tile-Upscaler), and the outputs were stable enough to use for video. If you take time tuning the settings, you can get a pretty good output - except that the model (or the LoRA) wants to give everyone eye makeup.
+I was super impressed with the output from [tile upscaler](https://huggingface.co/spaces/gokaygokay/Tile-Upscaler), and the outputs were stable enough to use for video. If you take time tuning the settings, you can get a pretty good output - except that the model (or the LoRA) wants to give everyone eye makeup.
 
 **This is just meant to be a simple script so I could run some videos through. Not for production usage!**
 
