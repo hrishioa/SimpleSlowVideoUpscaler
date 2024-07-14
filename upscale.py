@@ -238,16 +238,35 @@ def extract_frames(video_path, output_folder):
     ]
     subprocess.run(command, check=True)
 
-def frames_to_video(input_folder, output_path, fps):
-    command = [
+def frames_to_video(input_folder, output_path, fps, original_video_path):
+    # First, create the video from frames without audio
+    temp_output_path = output_path + "_temp.mp4"
+    video_command = [
         'ffmpeg',
         '-framerate', str(fps),
         '-i', f'{input_folder}/frame_%06d.png',
         '-c:v', 'libx264',
         '-pix_fmt', 'yuv420p',
+        temp_output_path
+    ]
+    subprocess.run(video_command, check=True)
+
+    # Then, copy the audio from the original video and add it to the new video
+    final_command = [
+        'ffmpeg',
+        '-i', temp_output_path,
+        '-i', original_video_path,
+        '-c:v', 'copy',
+        '-c:a', 'aac',
+        '-map', '0:v:0',
+        '-map', '1:a:0?',
+        '-shortest',
         output_path
     ]
-    subprocess.run(command, check=True)
+    subprocess.run(final_command, check=True)
+
+    # Remove the temporary file
+    os.remove(temp_output_path)
 
 @timer_func
 def process_video(input_video, resolution, num_inference_steps, strength, hdr, guidance_scale, max_frames=None, frame_interval=1, preserve_frames=False, progress=gr.Progress()):
@@ -321,7 +340,7 @@ def process_video(input_video, resolution, num_inference_steps, strength, hdr, g
         progress(0.9, desc="Reassembling video...")
         input_filename = os.path.splitext(os.path.basename(input_video))[0]
         output_video = os.path.join(job_folder, f"{input_filename}_upscaled.mp4")
-        frames_to_video(processed_frames_folder, output_video, 30)
+        frames_to_video(processed_frames_folder, output_video, 30, input_video)
 
         if abort_event.is_set():
             progress(1.0, desc="Video processing aborted, but partial result saved")

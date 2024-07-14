@@ -20,6 +20,10 @@
 
 Was super impressed with the output from [tile upscaler](https://huggingface.co/spaces/gokaygokay/Tile-Upscaler), and the outputs were stable enough to use for video. If you take time tuning the settings, you can get a pretty good output - except that the model (or the LoRA) wants to give everyone eye makeup.
 
+**This is just meant to be a simple script so I could run some videos through. Not for production usage!**
+
+I haven't been able to fully get it working on M1 Macs (with the ANE). Any help appreciated!
+
 # Installation
 
 First install cuda for your python if not already present:
