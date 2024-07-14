@@ -1,0 +1,15 @@
+git+https://github.com/doevent/Real-ESRGAN.git
+opencv-python
+spaces
+diffusers
+torch
+torchvision
+pipeline
+transformers
+accelerate
+safetensors
+spaces
+peft
+gradio
+pillow
+gradio-imageslider
