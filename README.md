@@ -4,11 +4,11 @@
   <br>
 </h1>
 
-<h3 align="center">Video version of [goKay's Tile Upscaler](https://huggingface.co/spaces/gokaygokay/Tile-Upscaler), made with Claude and patience</h3>
+<h3 align="center">Video version of goKay's Tile Upscaler, made with Claude and patience</h3>
 
 <div align="center">
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/hrishi?style=social)](https://twitter.com/hrishioa) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Twitter Follow](https://img.shields.io/twitter/follow/hrishi?style=social)](https://twitter.com/hrishioa)
 
 </div>
 
@@ -48,7 +48,7 @@ python upscaler.py
 
 # Usage
 
-[Image of program]
+![CleanShot 2024-07-14 at 11 47 30@2x](https://github.com/user-attachments/assets/b0cb7b76-eba3-4535-99fb-c0a6a130fcd6)
 
 You can abort processing at any time. Max frames to process, and skipping frames is super helpful if you just want to check the output. The defaults are sensible ones I found work in general. Play with the resolution - some videos work better at higher res (even though they themselves are lower res) and sometimes otherwise!
 
